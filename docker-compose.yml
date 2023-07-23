@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  shopfront:
+    image: jendaredocker/shopfront
+    ports:
+     - "8010:8010"
+    links:
+      - productcatalogue
+      - stockmanager
+
+  productcatalogue:
+    image: jendaredocker/productcatalogue
+    ports:
+     - "8020:8020"
+
+  stockmanager:
+    image: jendaredocker/stockmanager
+    ports:
+     - "8030:8030"
